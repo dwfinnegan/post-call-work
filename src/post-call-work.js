@@ -67,7 +67,7 @@ class PostCallWork extends HTMLElement {
 
 
   async checkCadVariable(msg) {
-    if (msg?.data?.interaction?.callAssociatedDetails?.[this.cadVariable] === "true") {
+    if (msg?.data?.interaction?.callAssociatedData?.[this.cadVariable]?.value === "true") {
       await Desktop.agentStateInfo.stateChange({ state: "Idle", auxCodeIdArray: this.auxCodeId });
       logger.info(`Found ${this.cadVariable}=true, setting state to ${this._auxCodeName}`);
     }
@@ -79,7 +79,7 @@ class PostCallWork extends HTMLElement {
     await this.validateAuxCode();
 
     if (this._isAuxCodeValidated) {
-      Desktop.agentContact.addEventListener("eAgentContactEnded", msg => this.checkCadVariable(msg));
+      Desktop.agentContact.addEventListener("eAgentWrapup", msg => this.checkCadVariable(msg));
     }
   }
 
