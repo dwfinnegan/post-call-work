@@ -4,6 +4,7 @@ This project creates a headless widget that automatically places an agent into a
 
 Setting a global variable (aka CAD variable in agent desktop) as the trigger for when to place an agent into the after call work state allows for simplified reporting logic vs having the agent manually change the idle code, as it places the data direcly into the Customer Session Record (CSR) repository. 
 
+## [Watch the Video: Post-Call-Work Widget](https://app.vidcast.io/share/5cc33a9c-16b4-496b-9e23-254822ab30f3)
 
 ## Getting Started
 
